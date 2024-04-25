@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34707.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{B8C9B8A6-43E0-4BB2-9140-F74745560E88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EZParking.Domain", "EZParking.Domain\EZParking.Domain.csproj", "{AC4D3365-0D8C-4369-8718-308D5AA627E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{DC68A54D-B543-44B2-BEEE-5F312C89456C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EZParking.Application", "EZParking.Application\EZParking.Application.csproj", "{06C4B3BE-95C1-4242-9E18-17C4E0F231F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A5C91878-6791-43DD-AB74-4D3934B18839}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EzParking.Infrastructure", "EzParking.Infrastructure\EzParking.Infrastructure.csproj", "{F87D21DE-342B-4DE1-B415-3F7C47F4CC2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{DA224734-B7C8-4FF4-8B7A-3D00B01AECF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EZParking.CrossCutting", "EZParking.CrossCutting\EZParking.CrossCutting.csproj", "{B60565A5-0F71-4A3F-B344-A2EFD11FE108}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{3A3410BB-F226-46C4-9016-274983607E4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EZParking.Api", "EZParking.Api\EZParking.Api.csproj", "{671A3CA1-43B6-4044-9402-193F7D7CF9B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{CA308A10-6A71-44DF-A741-92F80D3D7633}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EZParking.Data", "EZParking.Data\EZParking.Data.csproj", "{3E78113F-6364-40CA-8E0C-02B0D09B8251}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{73C49AA3-A288-4C06-B5FA-8EECB2A9C4FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZParking.Core", "EZParking.Core\EZParking.Core.csproj", "{617C58D7-04F7-4218-97A4-EDB718749088}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC4D3365-0D8C-4369-8718-308D5AA627E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4D3365-0D8C-4369-8718-308D5AA627E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC4D3365-0D8C-4369-8718-308D5AA627E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4D3365-0D8C-4369-8718-308D5AA627E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06C4B3BE-95C1-4242-9E18-17C4E0F231F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C4B3BE-95C1-4242-9E18-17C4E0F231F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C4B3BE-95C1-4242-9E18-17C4E0F231F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06C4B3BE-95C1-4242-9E18-17C4E0F231F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F87D21DE-342B-4DE1-B415-3F7C47F4CC2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F87D21DE-342B-4DE1-B415-3F7C47F4CC2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F87D21DE-342B-4DE1-B415-3F7C47F4CC2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F87D21DE-342B-4DE1-B415-3F7C47F4CC2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B60565A5-0F71-4A3F-B344-A2EFD11FE108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B60565A5-0F71-4A3F-B344-A2EFD11FE108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B60565A5-0F71-4A3F-B344-A2EFD11FE108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B60565A5-0F71-4A3F-B344-A2EFD11FE108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{671A3CA1-43B6-4044-9402-193F7D7CF9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671A3CA1-43B6-4044-9402-193F7D7CF9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671A3CA1-43B6-4044-9402-193F7D7CF9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671A3CA1-43B6-4044-9402-193F7D7CF9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E78113F-6364-40CA-8E0C-02B0D09B8251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E78113F-6364-40CA-8E0C-02B0D09B8251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E78113F-6364-40CA-8E0C-02B0D09B8251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E78113F-6364-40CA-8E0C-02B0D09B8251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617C58D7-04F7-4218-97A4-EDB718749088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617C58D7-04F7-4218-97A4-EDB718749088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617C58D7-04F7-4218-97A4-EDB718749088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617C58D7-04F7-4218-97A4-EDB718749088}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC4D3365-0D8C-4369-8718-308D5AA627E8} = {B8C9B8A6-43E0-4BB2-9140-F74745560E88}
+		{06C4B3BE-95C1-4242-9E18-17C4E0F231F8} = {DC68A54D-B543-44B2-BEEE-5F312C89456C}
+		{F87D21DE-342B-4DE1-B415-3F7C47F4CC2F} = {A5C91878-6791-43DD-AB74-4D3934B18839}
+		{B60565A5-0F71-4A3F-B344-A2EFD11FE108} = {DA224734-B7C8-4FF4-8B7A-3D00B01AECF4}
+		{671A3CA1-43B6-4044-9402-193F7D7CF9B6} = {3A3410BB-F226-46C4-9016-274983607E4F}
+		{3E78113F-6364-40CA-8E0C-02B0D09B8251} = {CA308A10-6A71-44DF-A741-92F80D3D7633}
+		{617C58D7-04F7-4218-97A4-EDB718749088} = {73C49AA3-A288-4C06-B5FA-8EECB2A9C4FE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86BA02B6-AD07-4EBA-9E3A-A63CC9C648A7}
+	EndGlobalSection
+EndGlobal
