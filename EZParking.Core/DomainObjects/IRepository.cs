@@ -5,9 +5,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EZParking.Core.Models
+namespace EZParking.Core.DomainObjects
 {
-    public interface IGenericRepository<TEntity> where TEntity : Entity
+    public interface IRepository<TEntity> where TEntity : Entity
     {
         Task<IEnumerable<TEntity>> GetByFilter(Expression<Func<TEntity, bool>> filter);
         Task<TEntity> GetByIdAsync(int id);

@@ -1,4 +1,4 @@
-﻿using EZParking.Core.Models;
+﻿using EZParking.Core.DomainObjects;
 using EZParking.Domain.ParkingLots.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EZParking.Domain.ParkingLots.Abstractions
 {
-    public interface IParkingLotRepository : IGenericRepository<ParkingLot>
+    public interface IParkingLotRepository : IRepository<ParkingLot>
     {
     }
 }

@@ -27,7 +27,7 @@ namespace EZParking.CrossCutting.Dependencies
 
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IGenericRepository<>), typeof(Repository<>));
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             //services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             //services.AddScoped<ICarroRepository, CarroRepository>();

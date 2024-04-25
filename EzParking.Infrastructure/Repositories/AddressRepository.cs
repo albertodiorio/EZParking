@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 
 namespace EzParking.Infrastructure.Repositories
 {
-    public class AddressRepository : GenericRepository<Address>, IAddressRepository
+    public class AddressRepository : Repository<Address>, IAddressRepository
     {
         public AddressRepository(AppDbContext appDbContext) : base(appDbContext)
         {
 
+        }
+
+        public long ObterAlgo(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

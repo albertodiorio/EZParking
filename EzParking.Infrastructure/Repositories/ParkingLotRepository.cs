@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EzParking.Infrastructure.Repositories
 {
-    public class ParkingLotRepository : GenericRepository<ParkingLot>, IParkingLotRepository
+    public class ParkingLotRepository : Repository<ParkingLot>, IParkingLotRepository
     {
         public ParkingLotRepository(AppDbContext appDbContext) : base(appDbContext) 
         { 

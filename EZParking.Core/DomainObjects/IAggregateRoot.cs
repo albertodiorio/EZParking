@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EZParking.Core.Models
+namespace EZParking.Core.DomainObjects
 {
-    public class Entity
+    public interface IAggregateRoot 
     {
-        public int Id { get;  private set; }
-
+    
     }
 }

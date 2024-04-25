@@ -28,7 +28,7 @@ namespace EZParking.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Add(ParkingLotRecord parkingLot)
         {
-            var pl = new ParkingLot(parkingLot.Name, parkingLot.FiscalCode);
+            var pl = new ParkingLot(parkingLot.Name, parkingLot.FiscalCode, true);
              await _unitOfWork.ParkingLotRepository.AddAsync(pl);
             _unitOfWork.Save();
 
