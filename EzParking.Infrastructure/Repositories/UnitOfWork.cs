@@ -1,4 +1,4 @@
-﻿using EZParking.Data.Context;
+﻿using EzParking.Infrastructure.Context;
 using EZParking.Domain.ParkingLots.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EZParking.Data.Repositories
+namespace EzParking.Infrastructure.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {

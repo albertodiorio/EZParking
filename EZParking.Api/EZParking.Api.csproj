@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EZParking.CrossCutting\EZParking.CrossCutting.csproj" />
-    <ProjectReference Include="..\EZParking.Data\EZParking.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
-﻿using EZParking.Core.Models;
-using EZParking.Data.Context;
+﻿using EzParking.Infrastructure.Context;
+using EZParking.Core.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EZParking.Data.Repositories
+namespace EzParking.Infrastructure.Repositories
 {
     public class GenericRepository<TEntity>(AppDbContext appDbContext) : IGenericRepository<TEntity> where TEntity : Entity
     {

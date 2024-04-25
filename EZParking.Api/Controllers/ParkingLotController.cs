@@ -30,7 +30,7 @@ namespace EZParking.Api.Controllers
         {
             var pl = new ParkingLot(parkingLot.Name, parkingLot.FiscalCode);
              await _unitOfWork.ParkingLotRepository.AddAsync(pl);
-            _unitOfWork.sa
+            _unitOfWork.Save();
 
             return Ok();
         }

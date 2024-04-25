@@ -10,4 +10,8 @@
     <ProjectReference Include="..\EZParking.Domain\EZParking.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ParkingLots\QueryHandlers\" />
+  </ItemGroup>
+
 </Project>

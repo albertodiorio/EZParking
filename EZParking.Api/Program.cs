@@ -1,5 +1,5 @@
+using EZParking.CrossCutting.Dependencies;
 using EZParking.Data;
-using EZParking.Data.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +12,8 @@ builder.Services.AddSwaggerGen();
 
 // Our app starts here.
 builder.Services.AddRepositories();
-builder.Services.AddEntityFramework(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddHandlers();
 
 var app = builder.Build();
 

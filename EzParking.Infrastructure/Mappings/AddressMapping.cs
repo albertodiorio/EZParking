@@ -1,13 +1,13 @@
 ﻿using EZParking.Domain.ParkingLots.Entities;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EZParking.Data.Mappings
+namespace EzParking.Infrastructure.Mappings
 {
     public class AddressMapping : IEntityTypeConfiguration<Address>
     {
