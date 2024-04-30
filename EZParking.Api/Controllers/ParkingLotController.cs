@@ -1,4 +1,6 @@
-﻿using EZParking.Domain.ParkingLots.Abstractions;
+﻿using EZParking.Common.Infra.Services;
+using EZParking.Domain.ParkingLots.Abstractions;
+using EZParking.Domain.ParkingLots.Commands;
 using EZParking.Domain.ParkingLots.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,17 +12,17 @@ namespace EZParking.Api.Controllers
     [ApiController]
     public class ParkingLotController : ControllerBase
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMediatorService _mediatorService;
 
-        public ParkingLotController(IUnitOfWork unitOfWork)
+        public ParkingLotController(IMediatorService mediatorService)
         {
-            _unitOfWork = unitOfWork;
+            _mediatorService = mediatorService;
         }
 
         [HttpGet]
         public async Task<ActionResult> Get(int parkingLotId)
         {
-            var parkingLot = await _unitOfWork.ParkingLotRepository.GetByFilter(c => c.Id == parkingLotId);
+            
 
             return Ok(parkingLot);
         }
@@ -28,9 +30,9 @@ namespace EZParking.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Add(ParkingLotRecord parkingLot)
         {
-            var pl = new ParkingLot(parkingLot.Name, parkingLot.FiscalCode, true);
-             await _unitOfWork.ParkingLotRepository.AddAsync(pl);
-            _unitOfWork.Save();
+
+            var command = new CreateParkingLotCommand();
+            await _mediatorService.Send(command);
 
             return Ok();
         }

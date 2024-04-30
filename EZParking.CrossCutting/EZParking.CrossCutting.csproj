@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EZParking.Application\EZParking.Application.csproj" />
+    <ProjectReference Include="..\EZParking.Common\EZParking.Common.csproj" />
     <ProjectReference Include="..\EZParking.Domain\EZParking.Domain.csproj" />
     <ProjectReference Include="..\EzParking.Infrastructure\EzParking.Infrastructure.csproj" />
   </ItemGroup>

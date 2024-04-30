@@ -7,12 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EZParking.Common\EZParking.Common.csproj" />
-    <ProjectReference Include="..\EZParking.Core\EZParking.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ParkingLots\Queries\" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

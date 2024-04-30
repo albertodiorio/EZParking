@@ -1,6 +1,7 @@
 ﻿using EzParking.Infrastructure.Context;
 using EzParking.Infrastructure.Repositories;
-using EZParking.Core.Models;
+using EZParking.Core.DomainObjects;
+using EzParking.Common;
 using EZParking.Domain.ParkingLots.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,7 +28,7 @@ namespace EZParking.CrossCutting.Dependencies
 
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            services.AddScoped(typeof(IGenericRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             //services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             //services.AddScoped<ICarroRepository, CarroRepository>();
@@ -44,6 +45,11 @@ namespace EZParking.CrossCutting.Dependencies
             });
 
             return services;
+        }
+
+        public static IServiceCollection AddValidators(this IServiceCollection services)
+        {
+            services.AddValidatorsFromAssembly(EzParking.Common.AssemblyReference.Assembly, includeInternalTypes: true);
         }
     }
 }

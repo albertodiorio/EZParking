@@ -14,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddRepositories();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddHandlers();
+builder.Services.AddValidators();
 
 var app = builder.Build();
 
