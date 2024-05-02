@@ -1,10 +1,5 @@
 ﻿using FluentValidation;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EZParking.Common.Validations
 {
@@ -17,10 +12,8 @@ namespace EZParking.Common.Validations
         public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
             if (!_validators.Any())
-            {
                 return await next();
-            }
-
+            
             Error[] errors = _validators
                 .Select(validator => validator.Validate(request))
                 .SelectMany(validationResult => validationResult.Errors)
@@ -37,8 +30,7 @@ namespace EZParking.Common.Validations
             return await next();
         }
 
-        private static TResult CreateValidationResult<TResult>(Error[] errors)
-            where TResult : Result
+        private static TResult CreateValidationResult<TResult>(Error[] errors) where TResult : Result
         {
             if (typeof(TResult) == typeof(Result))
                 return (ValidationResult.WithErrors(errors) as TResult)!;

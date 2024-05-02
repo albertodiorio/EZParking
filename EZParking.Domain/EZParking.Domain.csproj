@@ -12,6 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Customers\" />
+    <Folder Include="Floors\" />
+    <Folder Include="Tickets\" />
+    <Folder Include="VehiculeTypes\" />
+    <Folder Include="Vacancies\" />
+    <Folder Include="VehiculeModels\" />
     <Folder Include="ParkingLots\Queries\" />
   </ItemGroup>
 

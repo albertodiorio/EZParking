@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EZParking.Domain.ParkingLots.Commands
 {
-    public class CreateParkingLotCommand : ICommand
+    public class CreateParkingLotCommand : ICommand<bool>
     {
         public string Name { get; set; }
         public string FiscalCode { get; set; }
