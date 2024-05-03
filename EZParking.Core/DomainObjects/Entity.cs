@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using EZParking.Common.Validations;
 using System.Diagnostics.CodeAnalysis;
 
 

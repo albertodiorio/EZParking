@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EZParking.Application", "EZ
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A5C91878-6791-43DD-AB74-4D3934B18839}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EzParking.Infrastructure", "EzParking.Infrastructure\EzParking.Infrastructure.csproj", "{F87D21DE-342B-4DE1-B415-3F7C47F4CC2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EZParking.Infrastructure", "EzParking.Infrastructure\EZParking.Infrastructure.csproj", "{F87D21DE-342B-4DE1-B415-3F7C47F4CC2F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{DA224734-B7C8-4FF4-8B7A-3D00B01AECF4}"
 EndProject
@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EZParking.Core", "EZParking
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{604C6B9A-8DC4-40B9-A24A-CBCE4AFBA2FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZParking.Common", "EZParking.Common\EZParking.Common.csproj", "{D5943B2E-0725-4C94-A08F-E7E563EBE9A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EZParking.Common", "EZParking.Common\EZParking.Common.csproj", "{D5943B2E-0725-4C94-A08F-E7E563EBE9A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

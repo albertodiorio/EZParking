@@ -22,16 +22,21 @@ namespace EZParking.Api.Controllers
         [HttpGet]
         public async Task<ActionResult> Get(int parkingLotId)
         {
-            
-
-            return Ok(parkingLot);
+            return Ok();
         }
 
         [HttpPost]
         public async Task<ActionResult> Add(ParkingLotRecord parkingLot)
         {
 
-            var command = new CreateParkingLotCommand();
+            var command = new CreateParkingLotCommand()
+            {
+                IsActive = true,
+                FiscalCode = parkingLot.FiscalCode,
+                Name = parkingLot.Name,
+                
+            };
+
             await _mediatorService.Send(command);
 
             return Ok();

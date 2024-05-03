@@ -1,4 +1,4 @@
-﻿using EzParking.Infrastructure.Context;
+﻿using EZParking.Infrastructure.Context;
 using EZParking.Domain.ParkingLots.Abstractions;
 using EZParking.Domain.ParkingLots.Entities;
 

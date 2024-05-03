@@ -20,7 +20,7 @@ namespace EZParking.Application.ParkingLots.CommandHandlers
 
         public async Task<Result<bool>> Handle(CreateParkingLotCommand request, CancellationToken cancellationToken)
         {
-            var parkingLot = new ParkingLot();
+            var parkingLot = new ParkingLot(request.Name, request.FiscalCode);
             await _parkingLotRepository.AddAsync(parkingLot);
             bool result = _unitOfWork.Save();
 

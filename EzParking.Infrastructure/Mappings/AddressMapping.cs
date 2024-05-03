@@ -1,13 +1,8 @@
 ﻿using EZParking.Domain.ParkingLots.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EzParking.Infrastructure.Mappings
+namespace EZParking.Infrastructure.Mappings
 {
     public class AddressMapping : IEntityTypeConfiguration<Address>
     {
@@ -17,6 +12,8 @@ namespace EzParking.Infrastructure.Mappings
             builder.Property(a => a.Street).HasMaxLength(200).IsRequired();
             builder.Property(a => a.City).HasMaxLength(100).IsRequired();
             builder.Property(a => a.State).HasMaxLength(2).IsRequired();
+
+            builder.ToTable("Address");
 
         }
     }

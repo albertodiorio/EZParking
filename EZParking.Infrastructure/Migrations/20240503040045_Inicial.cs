@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace EZParking.Data.Migrations
+namespace EZParking.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,8 +15,7 @@ namespace EZParking.Data.Migrations
                 name: "ParkingLot",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     FiscalCode = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
@@ -26,10 +26,10 @@ namespace EZParking.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Addresses",
+                name: "Address",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Street = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Number = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     City = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
@@ -38,9 +38,9 @@ namespace EZParking.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Addresses", x => x.Id);
+                    table.PrimaryKey("PK_Address", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Addresses_ParkingLot_Id",
+                        name: "FK_Address_ParkingLot_Id",
                         column: x => x.Id,
                         principalTable: "ParkingLot",
                         principalColumn: "Id",
@@ -52,7 +52,7 @@ namespace EZParking.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Addresses");
+                name: "Address");
 
             migrationBuilder.DropTable(
                 name: "ParkingLot");

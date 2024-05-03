@@ -1,14 +1,9 @@
-﻿using EzParking.Infrastructure.Mappings;
+﻿using EZParking.Infrastructure.Mappings;
 using EZParking.Domain.ParkingLots.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
+using EZParking.Common.Validations;
 
-namespace EzParking.Infrastructure.Context
+namespace EZParking.Infrastructure.Context
 {
     public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
     {
@@ -19,7 +14,8 @@ namespace EzParking.Infrastructure.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+            modelBuilder.Ignore<Error>();
+            modelBuilder.Ignore<ValidationResult>();
             modelBuilder.ApplyConfiguration(new ParkingLotMapping());
             modelBuilder.ApplyConfiguration(new AddressMapping());
         }

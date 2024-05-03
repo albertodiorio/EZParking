@@ -1,16 +1,15 @@
-﻿using EzParking.Infrastructure.Context;
+﻿using EZParking.Infrastructure.Context;
 using EzParking.Infrastructure.Repositories;
+using EZParking.Common.Infra.Services;
 using EZParking.Core.DomainObjects;
-using EzParking.Common;
 using EZParking.Domain.ParkingLots.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EZParking.Common.Validations;
+using MediatR;
+using FluentValidation;
+using System.Reflection;
 
 namespace EZParking.CrossCutting.Dependencies
 {
@@ -30,8 +29,16 @@ namespace EZParking.CrossCutting.Dependencies
         {
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            //services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            //services.AddScoped<ICarroRepository, CarroRepository>();
+            services.AddScoped<IParkingLotRepository, ParkingLotRepository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
+
+            return services;
+        }
+
+        public static IServiceCollection AddServices(this IServiceCollection services)
+        {
+            services.AddScoped<IMediatorService, MediatorService>();
+
             return services;
         }
 
@@ -49,7 +56,11 @@ namespace EZParking.CrossCutting.Dependencies
 
         public static IServiceCollection AddValidators(this IServiceCollection services)
         {
-            services.AddValidatorsFromAssembly(EzParking.Common.AssemblyReference.Assembly, includeInternalTypes: true);
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationPipelineBehavior<,>));
+            services.AddValidatorsFromAssembly(Assembly.Load("EZParking.Common"), includeInternalTypes: true);
+
+            return services;
+
         }
     }
 }

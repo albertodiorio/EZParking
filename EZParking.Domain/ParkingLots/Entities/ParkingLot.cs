@@ -1,10 +1,5 @@
 ﻿using EZParking.Core.DomainObjects;
-using EZParking.Domain.Validations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace EZParking.Domain.ParkingLots.Entities
 {
@@ -17,55 +12,24 @@ namespace EZParking.Domain.ParkingLots.Entities
 
         private readonly List<Address> _addresses = [];
 
-    
+        public IReadOnlyCollection<Address> Addresses => _addresses;
 
+        private ParkingLot()
+        {
 
+        }
 
-        //public IReadOnlyCollection<Address> Addresses => _addresses;
+        public ParkingLot(string name, string fiscalCode)
+        {
+            Name = name;
+            FiscalCode = fiscalCode;
+        }
 
-        //public ParkingLot(int parkingLotId, string name, string fiscalCode)
-        //{
-        //    ValidationDomain.When(parkingLotId < 0,
-        //        "Invalid Id value.");
-        //    Validate(name, fiscalCode);
-        //}
+        public void Inativar()
+            => IsActive = false;
 
-        //private ParkingLot()
-        //{
-
-        //}
-
-        //public ParkingLot Create()
-        //    => new();
-
-        //public ParkingLot(string name, string fiscalCode)
-        //{
-        //    Name = name;
-        //    FiscalCode = fiscalCode;
-
-
-        //    Validate(Name, FiscalCode);
-        //}
-        //public void Inativar()
-        //    => IsActive = false;
-
-        //public void Ativar()
-        //    => IsActive |= true;
-
-        //public void Update(string name, string fiscalCode)
-        //    => Validate(name, fiscalCode);
-
-        //private static void Validate(string name, string fiscalCode)
-        //{
-        //    ValidationDomain.When(string.IsNullOrEmpty(name),
-        //        "Name is required.");
-
-        //    ValidationDomain.When(name.Length < 5,
-        //        "Name must contain 5 characters at least.");
-
-        //    ValidationDomain.When(string.IsNullOrEmpty(fiscalCode),
-        //        "Fiscal Code is required");
-        //}
+        public void Ativar()
+            => IsActive = false;
 
     }
 }
