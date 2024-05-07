@@ -22,7 +22,7 @@ namespace EzParking.Infrastructure.Repositories
             return await query.ToListAsync();
         }
 
-        public async Task<TEntity> GetByIdAsync(int id)
+        public async Task<TEntity> GetByIdAsync(Guid id)
         {
             return await _dbSet.FindAsync(id);
         }

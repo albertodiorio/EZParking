@@ -25,6 +25,7 @@ namespace EZParking.Application.ParkingLots.CommandHandlers
             bool result = _unitOfWork.Save();
 
             return result;
+
         }
     }
 }

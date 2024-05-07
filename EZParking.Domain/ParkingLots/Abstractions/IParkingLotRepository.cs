@@ -10,5 +10,6 @@ namespace EZParking.Domain.ParkingLots.Abstractions
 {
     public interface IParkingLotRepository : IRepository<ParkingLot>
     {
+        IEnumerable<ParkingLot> GetParkingLotBySql(Guid id);
     }
 }
