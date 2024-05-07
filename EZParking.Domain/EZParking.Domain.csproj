@@ -18,7 +18,6 @@
     <Folder Include="VehiculeTypes\" />
     <Folder Include="Vacancies\" />
     <Folder Include="VehiculeModels\" />
-    <Folder Include="ParkingLots\Queries\" />
   </ItemGroup>
 
 </Project>

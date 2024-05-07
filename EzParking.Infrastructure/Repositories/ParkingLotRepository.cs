@@ -13,18 +13,17 @@ namespace EzParking.Infrastructure.Repositories
            
         }
 
-        public IEnumerable<ParkingLot> GetParkingLotBySql(Guid id)
+        public Task<ParkingLot> GetParkingLotBySql(Guid id)
         {
-            var sql = new StringBuilder();
-            sql.Append("SELECT * FROM PARKINGLOT WHERE ID = :ID");
 
-            var parameters = Array.Empty<object>();
+            var parameters = new object[1];
             parameters.SetValue(id, 0);
 
-            var result = _appDbContext.ParkingLots.FromSqlRaw(sql.ToString(), parameters);
+            var sql = string.Format("SELECT * FROM PARKINGLOT WHERE ID = '{0}'", parameters.GetValue(0));
 
-            foreach(var item in result) 
-                yield return item;
+            var result = _appDbContext.ParkingLots.FromSqlRaw(sql.ToString(), parameters).FirstOrDefault();
+            
+            return Task.FromResult(result);
         }
     }
 }

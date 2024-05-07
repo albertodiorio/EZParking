@@ -2,6 +2,7 @@
 using EZParking.Domain.ParkingLots.Abstractions;
 using EZParking.Domain.ParkingLots.Commands;
 using EZParking.Domain.ParkingLots.Entities;
+using EZParking.Domain.ParkingLots.Queries;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
@@ -10,19 +11,22 @@ namespace EZParking.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ParkingLotController : ControllerBase
+    public class EzController : ControllerBase
     {
         private readonly IMediatorService _mediatorService;
 
-        public ParkingLotController(IMediatorService mediatorService)
+        public EzController(IMediatorService mediatorService)
         {
             _mediatorService = mediatorService;
         }
 
         [HttpGet]
-        public async Task<ActionResult> Get(int parkingLotId)
+        public async Task<ActionResult> Get(Guid parkingLotId)
         {
-            return Ok();
+            var query = new GetParkingLotByIdQuery(parkingLotId);
+            var result = await _mediatorService.Send(query);
+            
+            return Ok(result);
         }
 
         [HttpPost]
