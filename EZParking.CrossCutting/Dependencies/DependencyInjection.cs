@@ -10,6 +10,7 @@ using EZParking.Common.Validations;
 using MediatR;
 using FluentValidation;
 using System.Reflection;
+using Microsoft.AspNetCore.Identity;
 
 namespace EZParking.CrossCutting.Dependencies
 {
@@ -61,6 +62,14 @@ namespace EZParking.CrossCutting.Dependencies
 
             return services;
 
+        }
+
+        public static IServiceCollection AddIdentity(this IServiceCollection services)
+        {
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
+
+            return services;
         }
     }
 }

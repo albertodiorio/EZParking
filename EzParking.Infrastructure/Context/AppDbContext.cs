@@ -2,22 +2,23 @@
 using EZParking.Domain.ParkingLots.Entities;
 using Microsoft.EntityFrameworkCore;
 using EZParking.Common.Validations;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using EZParking.Domain.Users;
 
 namespace EZParking.Infrastructure.Context
 {
-    public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
+    public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbContext<ApplicationUser>(options)
     {
         public DbSet<ParkingLot> ParkingLots { get; set; }
         public DbSet<Address> Addresses { get; set; }
 
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Ignore<Error>();
-            modelBuilder.Ignore<ValidationResult>();
-            modelBuilder.ApplyConfiguration(new ParkingLotMapping());
-            modelBuilder.ApplyConfiguration(new AddressMapping());
+            base.OnModelCreating(builder);
+            builder.Ignore<Error>();
+            builder.Ignore<ValidationResult>();
+            builder.ApplyConfiguration(new ParkingLotMapping());
+            builder.ApplyConfiguration(new AddressMapping());
         }
     }
 }

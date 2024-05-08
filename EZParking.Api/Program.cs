@@ -1,5 +1,4 @@
 using EZParking.CrossCutting.Dependencies;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,6 +14,7 @@ builder.Services.AddRepositories();
 builder.Services.AddHandlers();
 builder.Services.AddValidators();
 builder.Services.AddServices();
+builder.Services.AddIdentity();
 
 var app = builder.Build();
 

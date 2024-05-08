@@ -1,21 +1,19 @@
-﻿using EZParking.Common.Infra.Services;
-using EZParking.Domain.ParkingLots.Abstractions;
+﻿using EZParking.Api.ParkingLot.Records;
+using EZParking.Common.Infra.Services;
 using EZParking.Domain.ParkingLots.Commands;
-using EZParking.Domain.ParkingLots.Entities;
 using EZParking.Domain.ParkingLots.Queries;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.CompilerServices;
 
-namespace EZParking.Api.Controllers
+
+namespace EZParking.Api.Controllers.ParkingLot
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EzController : ControllerBase
+    public class ParkingLotController : ControllerBase
     {
         private readonly IMediatorService _mediatorService;
 
-        public EzController(IMediatorService mediatorService)
+        public ParkingLotController(IMediatorService mediatorService)
         {
             _mediatorService = mediatorService;
         }
@@ -25,12 +23,12 @@ namespace EZParking.Api.Controllers
         {
             var query = new GetParkingLotByIdQuery(parkingLotId);
             var result = await _mediatorService.Send(query);
-            
+
             return Ok(result);
         }
 
         [HttpPost]
-        public async Task<ActionResult> Add(ParkingLotRecord parkingLot)
+        public async Task<ActionResult> Add(AddParkingLot parkingLot)
         {
 
             var command = new CreateParkingLotCommand()
@@ -38,15 +36,13 @@ namespace EZParking.Api.Controllers
                 IsActive = true,
                 FiscalCode = parkingLot.FiscalCode,
                 Name = parkingLot.Name,
-                
+
             };
 
             await _mediatorService.Send(command);
 
             return Ok();
         }
-
-        public record ParkingLotRecord(string Name, string FiscalCode);
 
     }
 }
