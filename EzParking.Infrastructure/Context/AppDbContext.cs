@@ -3,7 +3,7 @@ using EZParking.Domain.ParkingLots.Entities;
 using Microsoft.EntityFrameworkCore;
 using EZParking.Common.Validations;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using EZParking.Domain.Users;
+using EZParking.Common.Security.Users;
 
 namespace EZParking.Infrastructure.Context
 {

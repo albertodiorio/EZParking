@@ -28,14 +28,14 @@ namespace EZParking.Api.Controllers.ParkingLot
         }
 
         [HttpPost]
-        public async Task<ActionResult> Add(AddParkingLot parkingLot)
+        public async Task<ActionResult> Add(ParkingLotRequest request)
         {
 
             var command = new CreateParkingLotCommand()
             {
                 IsActive = true,
-                FiscalCode = parkingLot.FiscalCode,
-                Name = parkingLot.Name,
+                FiscalCode = request.FiscalCode,
+                Name = request.Name,
 
             };
 

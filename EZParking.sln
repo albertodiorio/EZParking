@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{604C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EZParking.Common", "EZParking.Common\EZParking.Common.csproj", "{D5943B2E-0725-4C94-A08F-E7E563EBE9A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZParking.Common.Security", "EZParking.Common.Security\EZParking.Common.Security.csproj", "{D65E7C03-B881-40D4-87DE-7527A3F1C12E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{D5943B2E-0725-4C94-A08F-E7E563EBE9A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5943B2E-0725-4C94-A08F-E7E563EBE9A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5943B2E-0725-4C94-A08F-E7E563EBE9A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D65E7C03-B881-40D4-87DE-7527A3F1C12E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D65E7C03-B881-40D4-87DE-7527A3F1C12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D65E7C03-B881-40D4-87DE-7527A3F1C12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D65E7C03-B881-40D4-87DE-7527A3F1C12E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{671A3CA1-43B6-4044-9402-193F7D7CF9B6} = {3A3410BB-F226-46C4-9016-274983607E4F}
 		{617C58D7-04F7-4218-97A4-EDB718749088} = {73C49AA3-A288-4C06-B5FA-8EECB2A9C4FE}
 		{D5943B2E-0725-4C94-A08F-E7E563EBE9A1} = {604C6B9A-8DC4-40B9-A24A-CBCE4AFBA2FD}
+		{D65E7C03-B881-40D4-87DE-7527A3F1C12E} = {604C6B9A-8DC4-40B9-A24A-CBCE4AFBA2FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {86BA02B6-AD07-4EBA-9E3A-A63CC9C648A7}

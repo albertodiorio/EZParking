@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
 
-namespace EZParking.Domain.Users
+namespace EZParking.Common.Security.Users
 {
     public class ApplicationUser : IdentityUser
     {

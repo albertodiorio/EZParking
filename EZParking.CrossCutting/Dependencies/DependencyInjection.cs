@@ -11,6 +11,9 @@ using MediatR;
 using FluentValidation;
 using System.Reflection;
 using Microsoft.AspNetCore.Identity;
+using EZParking.Common.Messaging;
+using EZParking.Common.Queries;
+using EZParking.Common.Security.Users;
 
 namespace EZParking.CrossCutting.Dependencies
 {
@@ -45,12 +48,7 @@ namespace EZParking.CrossCutting.Dependencies
 
         public static IServiceCollection AddHandlers(this IServiceCollection services)
         {
-            var handlers = AppDomain.CurrentDomain.Load("EZParking.Application");
-
-            services.AddMediatR(cfg =>
-            {
-                cfg.RegisterServicesFromAssemblies(handlers);                
-            });
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
             return services;
         }
@@ -66,7 +64,7 @@ namespace EZParking.CrossCutting.Dependencies
 
         public static IServiceCollection AddIdentity(this IServiceCollection services)
         {
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
 
             return services;

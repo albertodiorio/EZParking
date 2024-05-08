@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EZParking.Common.Security\EZParking.Common.Security.csproj" />
     <ProjectReference Include="..\EZParking.Domain\EZParking.Domain.csproj" />
   </ItemGroup>
 

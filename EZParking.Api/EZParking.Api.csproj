@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EZParking.Common.Security\EZParking.Common.Security.csproj" />
     <ProjectReference Include="..\EZParking.CrossCutting\EZParking.CrossCutting.csproj" />
   </ItemGroup>
 
