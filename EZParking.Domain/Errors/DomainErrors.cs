@@ -4,7 +4,7 @@ namespace EZParking.Domain.Errors
 {
     public static class DomainErrors
     {
-        public static class Teste
+        public static class User
         {
             public static readonly Error EmptyName = new(
                 "ApplicationUser.Name",
@@ -17,6 +17,11 @@ namespace EZParking.Domain.Errors
             public static readonly Error EmptyPass = new(
                 "ApplicationUser.Password",
                 "Password is empty");
+
+            public static readonly Error NotFound = new(
+                "Application.Id",
+                "User not found");
+
         }
     }
 }

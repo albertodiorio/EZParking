@@ -1,9 +1,9 @@
-﻿using EZParking.Infrastructure.Mappings;
-using EZParking.Domain.ParkingLots.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using EZParking.Common.Security.Users;
 using EZParking.Common.Validations;
+using EZParking.Domain.ParkingLots.Entities;
+using EZParking.Infrastructure.Mappings;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using EZParking.Common.Security.Users;
+using Microsoft.EntityFrameworkCore;
 
 namespace EZParking.Infrastructure.Context
 {

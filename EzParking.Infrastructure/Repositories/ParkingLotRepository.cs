@@ -1,8 +1,7 @@
-﻿using EZParking.Infrastructure.Context;
-using EZParking.Domain.ParkingLots.Abstractions;
+﻿using EZParking.Domain.ParkingLots.Abstractions;
 using EZParking.Domain.ParkingLots.Entities;
+using EZParking.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
-using System.Text;
 
 namespace EzParking.Infrastructure.Repositories
 {
@@ -10,7 +9,7 @@ namespace EzParking.Infrastructure.Repositories
     {
         public ParkingLotRepository(AppDbContext appDbContext) : base(appDbContext)
         {
-           
+
         }
 
         public Task<ParkingLot> GetParkingLotBySql(Guid id)
@@ -22,7 +21,7 @@ namespace EzParking.Infrastructure.Repositories
             var sql = string.Format("SELECT * FROM PARKINGLOT WHERE ID = '{0}'", parameters.GetValue(0));
 
             var result = _appDbContext.ParkingLots.FromSqlRaw(sql.ToString(), parameters).FirstOrDefault();
-            
+
             return Task.FromResult(result);
         }
     }

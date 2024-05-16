@@ -1,3 +1,4 @@
+using EZParking.Common.Security.Users;
 using EZParking.CrossCutting.Dependencies;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,4 +32,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapIdentityApi<ApplicationUser>();
 app.Run();

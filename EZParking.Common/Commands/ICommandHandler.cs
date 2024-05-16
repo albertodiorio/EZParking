@@ -2,7 +2,7 @@
 using MediatR;
 
 namespace EZParking.Common.Messaging
-{ 
+{
     public interface ICommandHandler<TCommand> : IRequestHandler<TCommand, Result>
         where TCommand : ICommand
     {

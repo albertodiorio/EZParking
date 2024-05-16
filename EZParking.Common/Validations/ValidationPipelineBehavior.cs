@@ -13,7 +13,7 @@ namespace EZParking.Common.Validations
         {
             if (!_validators.Any())
                 return await next();
-            
+
             Error[] errors = _validators
                 .Select(validator => validator.Validate(request))
                 .SelectMany(validationResult => validationResult.Errors)
@@ -25,8 +25,8 @@ namespace EZParking.Common.Validations
                 .ToArray();
 
             if (errors.Any())
-                return  CreateValidationResult<TResponse>(errors);
-            
+                return CreateValidationResult<TResponse>(errors);
+
             return await next();
         }
 
@@ -34,7 +34,7 @@ namespace EZParking.Common.Validations
         {
             if (typeof(TResult) == typeof(Result))
                 return (ValidationResult.WithErrors(errors) as TResult)!;
-            
+
             object validationResult = typeof(ValidationResult<>)
                 .GetGenericTypeDefinition()
                 .MakeGenericType(typeof(TResult).GenericTypeArguments[0])
@@ -42,6 +42,6 @@ namespace EZParking.Common.Validations
                 .Invoke(null, new object?[] { errors })!;
 
             return (TResult)validationResult;
-        }   
+        }
     }
 }

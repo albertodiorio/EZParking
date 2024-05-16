@@ -1,6 +1,6 @@
-﻿using EZParking.Infrastructure.Context;
-using EZParking.Domain.ParkingLots.Abstractions;
+﻿using EZParking.Domain.ParkingLots.Abstractions;
 using EZParking.Domain.ParkingLots.Entities;
+using EZParking.Infrastructure.Context;
 
 
 namespace EzParking.Infrastructure.Repositories

@@ -11,8 +11,8 @@ namespace EZParking.Core.DomainObjects
         public ValidationResult? ValidationResult { get; protected set; }
 
         protected Entity()
-            =>  Id = Guid.NewGuid();
-        
+            => Id = Guid.NewGuid();
+
         public bool Equals(Entity? x, Entity? y)
         {
             if (x is null && y is null)

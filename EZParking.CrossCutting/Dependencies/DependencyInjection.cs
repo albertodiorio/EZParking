@@ -1,19 +1,17 @@
-﻿using EZParking.Infrastructure.Context;
-using EzParking.Infrastructure.Repositories;
+﻿using EzParking.Infrastructure.Repositories;
 using EZParking.Common.Infra.Services;
+using EZParking.Common.Security.Users;
+using EZParking.Common.Validations;
 using EZParking.Core.DomainObjects;
 using EZParking.Domain.ParkingLots.Abstractions;
+using EZParking.Infrastructure.Context;
+using FluentValidation;
+using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using EZParking.Common.Validations;
-using MediatR;
-using FluentValidation;
 using System.Reflection;
-using Microsoft.AspNetCore.Identity;
-using EZParking.Common.Messaging;
-using EZParking.Common.Queries;
-using EZParking.Common.Security.Users;
 
 namespace EZParking.CrossCutting.Dependencies
 {
@@ -49,7 +47,6 @@ namespace EZParking.CrossCutting.Dependencies
         public static IServiceCollection AddHandlers(this IServiceCollection services)
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
-
             return services;
         }
 
@@ -64,8 +61,16 @@ namespace EZParking.CrossCutting.Dependencies
 
         public static IServiceCollection AddIdentity(this IServiceCollection services)
         {
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppDbContext>();
+            services.AddAuthorization();
+
+            services.AddAuthentication()
+                .AddCookie(IdentityConstants.ApplicationScheme)
+                .AddBearerToken(IdentityConstants.BearerScheme);
+
+            services.AddIdentityCore<ApplicationUser>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddApiEndpoints();
 
             return services;
         }

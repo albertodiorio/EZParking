@@ -3,7 +3,7 @@
 
 namespace EZParking.Domain.ParkingLots.Entities
 {
-    public sealed class ParkingLot: Entity, IAggregateRoot
+    public sealed class ParkingLot : Entity, IAggregateRoot
     {
 
         public string? Name { get; private set; }

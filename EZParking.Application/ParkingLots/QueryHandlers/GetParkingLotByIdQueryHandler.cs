@@ -2,11 +2,6 @@
 using EZParking.Common.Validations;
 using EZParking.Domain.ParkingLots.Abstractions;
 using EZParking.Domain.ParkingLots.Queries;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EZParking.Application.ParkingLots.QueryHandlers
 {
@@ -24,7 +19,7 @@ namespace EZParking.Application.ParkingLots.QueryHandlers
             var result = await _parkingLotRepository.GetParkingLotBySql(request.Id);
 
             return new GetParkingLotByIdQueryResult(result.Id, result.Name, result.FiscalCode);
- 
+
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿using EZParking.Infrastructure.Context;
-using EZParking.Core.DomainObjects;
+﻿using EZParking.Core.DomainObjects;
+using EZParking.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 

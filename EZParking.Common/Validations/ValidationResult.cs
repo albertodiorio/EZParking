@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace EZParking.Common.Validations
+﻿namespace EZParking.Common.Validations
 {
     public sealed class ValidationResult : Result, IValidationResult
     {
@@ -13,7 +11,7 @@ namespace EZParking.Common.Validations
         {
             Errors = errors;
         }
-    
+
         public Error[] Errors { get; }
 
         public static ValidationResult WithErrors(Error[] errors) => new(errors);

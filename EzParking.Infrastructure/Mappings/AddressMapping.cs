@@ -1,6 +1,6 @@
 ﻿using EZParking.Domain.ParkingLots.Entities;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EZParking.Infrastructure.Mappings
 {
